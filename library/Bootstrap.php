@@ -20,6 +20,13 @@ class Bootstrap{
             include_once($file_name);
             $controller = new $url['0'];
 
+            if(isset($url['1']) AND method_exists($controller, $url['1'])){
+
+                $controller->{$url['1']}($url['2']);
+            }else{
+                $controller->Index();
+            }
+
         }else{
             echo 'Page Not Found';
         }

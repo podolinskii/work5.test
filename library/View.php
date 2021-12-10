@@ -2,8 +2,15 @@
 
 class View{
 
-    public function __construct()
-    {
-
+    //запускаем рендер страницы, если существует нужный раздел
+    public function render($path, $filename='index'){
+        $view_path = $_SERVER['DOCUMENT_ROOT'].'/views/'.$path.'/'.$filename.'.php';
+        if(file_exists($view_path)){
+            include_once($view_path);
+        }
     }
+
+
+
+
 }
