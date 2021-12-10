@@ -28,16 +28,16 @@ require_once 'views/header.php';
     <div id="error"><?=$this->error_reg?></div>
     <form method="post" action="/login/registration">
         <label class="form-label" for="login">Укажите логин:</label>
-        <input class="form-control" id="reg_login" type="text" placeholder="">
+        <input name="login" class="form-control" id="reg_login" type="text" placeholder="" required>
 
         <label class="form-label" for="login">Укажите ФИО:</label>
-        <input class="form-control" id="reg_fio" type="text">
+        <input name="fio" class="form-control" id="reg_fio" type="text" required>
 
         <label class="form-label" for="login">Укажите Email:</label>
-        <input class="form-control" id="reg_password" type="email">
+        <input name="email" class="form-control" id="reg_password" type="email" required>
 
         <label class="form-label" for="login">Укажите пароль:</label>
-        <input class="form-control" id="reg_password" type="password">
+        <input name="password" class="form-control" id="reg_password" type="password" required>
 
         <input class="form-btn" type="submit" value="Отправить">
     </form>

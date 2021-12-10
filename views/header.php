@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="/public/main/css/style.css">
     <link rel="stylesheet" href="/public/<?=$this->styles?>">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="<?=$this->scripts?>"></script>
+
     <title><?=$this->title?></title>
 </head>
 
