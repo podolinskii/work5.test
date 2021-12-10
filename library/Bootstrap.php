@@ -10,7 +10,7 @@ class Bootstrap{
             //Записываем запрос в массив
             $url = explode("/", (rtrim($_GET["url"], "/")));
         }else{
-            $url['0'] = 'Index';
+            $url['0'] = 'Login';
         }
 //Определяем путь к контроллеру
         $file_name = PATHPREFIX.$url['0'].PATHPOSTFIX;
