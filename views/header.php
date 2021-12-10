@@ -5,9 +5,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           crossorigin="anonymous" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" >
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/main/css/style.css">
+    <link rel="stylesheet" href="/public/<?=$this->styles?>">
 
-    <title>Title</title>
+    <title><?=$this->title?></title>
 </head>
 
 <header class="p-3 bg-dark text-white">
@@ -24,8 +25,13 @@
 
 
             <div class="text-end">
+
+                <? if(User::isLogin()):?>
+                <a href="/login/logout"><button type="button" class="btn btn-outline-light me-2">Выйти</button></a>
+                <? else: ?>
                 <a href="/login"><button type="button" class="btn btn-outline-light me-2">Войти</button></a>
-                <a href="/login "><button type="button" class="btn btn-warning">Регистрация</button></a>
+                <?php endif?>
+
             </div>
         </div>
     </div>

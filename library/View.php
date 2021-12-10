@@ -10,6 +10,11 @@ class View{
         }
     }
 
+    public function setTitle($title){
+        $this->title = 'Work5 - '.$title;
+    }
+
+
 
 
 

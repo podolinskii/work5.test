@@ -1,7 +1,14 @@
 <?php
-
 require_once 'views/header.php';
+?>
 
-echo 'Account page';
+    <div id="block_account">
 
+
+
+    </div>
+
+
+<?php
 require_once 'views/footer.php';
+?>
