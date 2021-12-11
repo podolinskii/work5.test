@@ -8,16 +8,12 @@ class Account extends Controller
         if (!(User::isLogin())) {
             header('Location: http://work5.test/login');
         }
-
         parent::__construct();
         $this->view->setTitle('Личный кабинет');
-
-
     }
 
     public function changeUserInfo()
     {
-
         if (isset($_POST["target"]) and isset($_POST["value"])) {
 
             $id = User::getID();
@@ -35,7 +31,6 @@ class Account extends Controller
     }
 
     public function changePassword(){
-
         if (isset($_POST["old_pw"]) && isset($_POST["new_pw"]) && $_POST["new_pw"] !=''){
             $login = User::getLogin();
             $old_pw = htmlspecialchars($_POST["old_pw"]);
@@ -48,9 +43,6 @@ class Account extends Controller
 
             ];
             $this->model->changePassword($data);
-
-
-
         }else{
             echo 'Заполните все поля!';
         }

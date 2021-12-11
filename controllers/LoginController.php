@@ -24,12 +24,9 @@ class Login extends Controller
 
             if ($this->model->login($login, $pass)) {
                 header('Location:' . 'http://work5.test/account');
-
             } else {
-
                 $this->view->error_login = 'Неверный логин или пароль!';
                 $this->Index();
-
             }
         } else {
             $this->view->error_login = 'Укажите логин и пароль!';
@@ -38,8 +35,7 @@ class Login extends Controller
     }
 
     // Выйти из аккаунта
-    public function logOut()
-    {
+    public function logOut(){
         User::logOut();
     }
 

@@ -26,7 +26,7 @@ class Bootstrap
 
             //Проверяем существование метода
             if (isset($url['1']) and method_exists($controller, $url['1'])) {
-                $controller->{$url['1']}($url['2']);
+                $controller->{$url['1']}();
             } else {
                 $controller->Index();
             }
