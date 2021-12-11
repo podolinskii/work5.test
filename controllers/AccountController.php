@@ -58,5 +58,22 @@ class Account extends Controller
 
     }
 
+    public function task_1(){
+        $this->view->task1 = $this->model->task_1();
+        $this->view->render(get_class($this),'task_1');
+    }
+
+    public function task_2(){
+        $this->view->task2  = $this->model->task_2();
+        $this->view->render(get_class($this),'task_2');
+    }
+
+    public function task_3(){
+        $this->view->task3  = $this->model->task_3();
+        $this->view->render(get_class($this),'task_3');
+    }
+
+
+
 
 }

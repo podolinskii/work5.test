@@ -31,7 +31,7 @@ $(document).ready(function (){
     });
 
     $(document).on('click','.change_pw', function (){
-        $(this).fadeOut();
+        $(this).hide();
         $('#old_pass').fadeIn();
         $('#new_pass').fadeIn();
         $('.change_pass').fadeIn();

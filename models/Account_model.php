@@ -64,4 +64,46 @@ class Account_model extends Model
 
     }
 
+    //Задание 1
+    public function task_1(){
+        $stmt = $this->db->prepare("SELECT email, COUNT(email) FROM users GROUP BY email HAVING COUNT(email) > 1");
+        $stmt->execute();
+
+        if($stmt->rowCount() > 0){
+            $result = $stmt->fetchAll();
+            return $result;
+        }else{
+            return $result = ['error' => 'Ошибка'];
+        }
+
+    }
+    //Задание 2
+    public function task_2(){
+        $stmt = $this->db->prepare("SELECT DISTINCT login FROM users
+                                          WHERE NOT EXISTS (SELECT user_id FROM orders WHERE users.id=orders.user_id )");
+
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            $result = $stmt->fetchAll();
+            return $result;
+        }else{
+            return $result = ['error' => 'Ошибка'];
+        }
+
+    }
+    //Задание 3
+    public function task_3(){
+        $stmt = $this->db->prepare("SELECT login, COUNT(login) as count FROM orders,users 
+                                        WHERE users.id=orders.user_id GROUP BY login HAVING COUNT(login) > 2");
+
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            $result = $stmt->fetchAll();
+            return $result;
+        }else{
+            return $result = ['error' => 'Ошибка'];
+        }
+
+    }
+
 }
